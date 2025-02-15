@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id "java-library"
+    id "org.springframework.boot" version '3.2.5'
+    id 'maven-publish'
+}
+
+group = 'ru.panyukovnn'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+def springVersion = '3.2.5'
+
+dependencies {
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = rootProject.getGroup()
+            artifactId = rootProject.getName()
+            version = rootProject.getVersion()
+
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            url = "file://${project.projectDir.toString()}/maven-repo/"
+        }
+    }
+}
