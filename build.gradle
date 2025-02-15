@@ -13,6 +13,9 @@ repositories {
     mavenCentral()
 }
 
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
+
 def springVersion = '3.2.5'
 
 dependencies {
