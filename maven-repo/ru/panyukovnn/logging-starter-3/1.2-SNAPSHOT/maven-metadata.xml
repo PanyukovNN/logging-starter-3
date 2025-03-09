@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>ru.panyukovnn</groupId>
+  <artifactId>logging-starter-3</artifactId>
+  <versioning>
+    <lastUpdated>20250309073642</lastUpdated>
+    <snapshot>
+      <timestamp>20250309.073642</timestamp>
+      <buildNumber>2</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.2-20250309.073642-2</value>
+        <updated>20250309073642</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.2-20250309.073642-2</value>
+        <updated>20250309073642</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>1.2-20250309.073642-2</value>
+        <updated>20250309073642</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>1.2-SNAPSHOT</version>
+</metadata>
