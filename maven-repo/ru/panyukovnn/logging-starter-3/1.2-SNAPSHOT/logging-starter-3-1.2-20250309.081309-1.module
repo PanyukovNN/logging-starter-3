@@ -1,0 +1,76 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "ru.panyukovnn",
+    "module": "logging-starter-3",
+    "version": "1.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.12"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "logging-starter-3-1.2-SNAPSHOT.jar",
+          "url": "logging-starter-3-1.2-SNAPSHOT.jar",
+          "size": 9714,
+          "sha512": "b358201cbb0b0b6821ca6c067200458f2fe789e7c1efef556195e1958f9d563837c99fea366410095d6b1048079bfeff9d306fcdaea67b27de073bce2efbce5c",
+          "sha256": "044bca5233c19ddaa5de7477a35e826d90d8eea8c5fb3e87e5aa7cec533f8a74",
+          "sha1": "fded425747272d0e336951e3fcabad2e84d6d4af",
+          "md5": "010188c7641a7b319c0126fa8398d842"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-web",
+          "version": {
+            "requires": "3.2.5"
+          }
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-aop",
+          "version": {
+            "requires": "3.2.5"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "logging-starter-3-1.2-SNAPSHOT.jar",
+          "url": "logging-starter-3-1.2-SNAPSHOT.jar",
+          "size": 9714,
+          "sha512": "b358201cbb0b0b6821ca6c067200458f2fe789e7c1efef556195e1958f9d563837c99fea366410095d6b1048079bfeff9d306fcdaea67b27de073bce2efbce5c",
+          "sha256": "044bca5233c19ddaa5de7477a35e826d90d8eea8c5fb3e87e5aa7cec533f8a74",
+          "sha1": "fded425747272d0e336951e3fcabad2e84d6d4af",
+          "md5": "010188c7641a7b319c0126fa8398d842"
+        }
+      ]
+    }
+  ]
+}
