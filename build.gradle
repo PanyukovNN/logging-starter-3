@@ -1,12 +1,11 @@
 plugins {
     id 'java'
     id "java-library"
-    id "org.springframework.boot" version '3.2.5'
     id 'maven-publish'
 }
 
 group = 'ru.panyukovnn'
-version = '1.1-SNAPSHOT'
+version = '1.2-SNAPSHOT'
 
 repositories {
     mavenLocal()
@@ -19,7 +18,8 @@ java.targetCompatibility = JavaVersion.VERSION_17
 def springVersion = '3.2.5'
 
 dependencies {
-
+    implementation "org.springframework.boot:spring-boot-starter-web:${springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-aop:${springVersion}"
 }
 
 test {
@@ -43,5 +43,3 @@ publishing {
         }
     }
 }
-
-bootJar.enabled = false
