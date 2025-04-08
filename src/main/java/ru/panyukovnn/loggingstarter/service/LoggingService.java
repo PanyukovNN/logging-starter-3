@@ -1,5 +1,7 @@
 package ru.panyukovnn.loggingstarter.service;
 
+import feign.Request;
+import feign.Response;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.util.Strings;
@@ -7,7 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import ru.panyukovnn.loggingstarter.dto.RequestDirection;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
@@ -27,7 +31,16 @@ public class LoggingService {
         String requestURI = request.getRequestURI() + formatQueryString(request);
         String headers = inlineHeaders(request);
 
-        log.info("Запрос: {} {} {}", method, requestURI, headers);
+        log.info("Запрос: {} {} {} {}", RequestDirection.IN, method, requestURI, headers);
+    }
+
+    public void logFeignRequest(Request request) {
+        String method = request.httpMethod().name();
+        String requestURI = request.url();
+        String headers = inlineHeaders(request.headers());
+        String body = logBody ? new String(request.body(), StandardCharsets.UTF_8) : "";
+
+        log.info("Запрос: {} {} {} {} body={}", RequestDirection.OUT, method, requestURI, headers, body);
     }
 
     public void logRequestBody(HttpServletRequest request, Object body) {
@@ -36,7 +49,7 @@ public class LoggingService {
 
         Object bodyToLog = logBody ? body : "";
 
-        log.info("Тело запроса: {} {} {}", method, requestURI, bodyToLog);
+        log.info("Тело запроса: {} {} {} {}", RequestDirection.IN, method, requestURI, bodyToLog);
     }
 
     public void logResponse(HttpServletRequest request, HttpServletResponse response, String responseBody) {
@@ -45,7 +58,17 @@ public class LoggingService {
 
         Object bodyToLog = logBody ? responseBody : "";
 
-        log.info("Ответ: {} {} {} body={}", method, requestURI, response.getStatus(), bodyToLog);
+        log.info("Ответ: {} {} {} {} body={}", RequestDirection.IN, method, requestURI, response.getStatus(), bodyToLog);
+    }
+
+    public void logFeignResponse(Response response, String responseBody) {
+        String url = response.request().url();
+        String method = response.request().httpMethod().name();
+        int status = response.status();
+
+        Object bodyToLog = logBody ? responseBody : "";
+
+        log.info("Ответ: {} {} {} {} body={}", RequestDirection.OUT, method, url, status, bodyToLog);
     }
 
     private String inlineHeaders(HttpServletRequest request) {

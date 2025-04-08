@@ -3,26 +3,26 @@
   <groupId>ru.panyukovnn</groupId>
   <artifactId>logging-starter-3</artifactId>
   <versioning>
-    <lastUpdated>20250309081425</lastUpdated>
+    <lastUpdated>20250408150627</lastUpdated>
     <snapshot>
-      <timestamp>20250309.081425</timestamp>
-      <buildNumber>1</buildNumber>
+      <timestamp>20250408.150627</timestamp>
+      <buildNumber>2</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
-        <extension>module</extension>
-        <value>1.3-20250309.081425-1</value>
-        <updated>20250309081425</updated>
-      </snapshotVersion>
-      <snapshotVersion>
         <extension>pom</extension>
-        <value>1.3-20250309.081425-1</value>
-        <updated>20250309081425</updated>
+        <value>1.3-20250408.150627-2</value>
+        <updated>20250408150627</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.3-20250309.081425-1</value>
-        <updated>20250309081425</updated>
+        <value>1.3-20250408.150627-2</value>
+        <updated>20250408150627</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>1.3-20250408.150627-2</value>
+        <updated>20250408150627</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
